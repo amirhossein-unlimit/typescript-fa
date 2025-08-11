@@ -9,6 +9,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  site: {
+    url: "https://typescript-fa.ir",
+  },
   i18n: {
     defaultLocale: "fa",
     locales: [{ code: "fa", name: "فارسی", language: "fa-IR" }],
