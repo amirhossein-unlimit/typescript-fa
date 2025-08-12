@@ -18,7 +18,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ['IRANSansXV'],
-        mono: ['Geist Mono'],
       },
       colors: {
         border: 'hsl(var(--border))',

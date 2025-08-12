@@ -16,5 +16,12 @@ export default defineNuxtConfig({
     defaultLocale: "fa",
     locales: [{ code: "fa", name: "فارسی", language: "fa-IR" }],
   },
+
+  nitro: {
+    prerender: {
+      routes: ["/get-started", "/basics", "/basics/everyday-types"],
+    },
+  },
+
   compatibilityDate: "2024-07-06",
 });
