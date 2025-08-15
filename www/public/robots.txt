@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://typescript-fa.ir/sitemap.xml
+Host: https://typescript-fa.ir
