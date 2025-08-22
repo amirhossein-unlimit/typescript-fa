@@ -7,11 +7,6 @@ interface DefaultConfig {
     ogImage: string;
     ogImageComponent: string;
     ogImageColor: 'dark' | 'light';
-    umami: {
-      enable: boolean;
-      src: string;
-      dataWebsiteId: string;
-    };
   };
   theme: {
     customizable: boolean;
@@ -113,16 +108,6 @@ interface DefaultConfig {
       to: string;
       target: string;
     })[];
-    carbonAds: {
-      enable: boolean;
-      disableInDev: boolean;
-      disableInMobile: boolean;
-      fallback: boolean;
-      fallbackMessage: string;
-      code: string;
-      placement: string;
-      format: 'cover' | 'responsive';
-    };
   };
   search: {
     enable: boolean;

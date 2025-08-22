@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "FiraCode";
+    src: url("../fonts/FiraCode-Regular.woff2") format("woff2"), url("../fonts/FiraCode-Regular.woff") format("woff");
+    font-display: swap;
+}
+
 html {
     color-scheme: light;
 }

@@ -1,9 +1,9 @@
 <template>
   <NuxtLink
     :to="href"
-    :target="target"
-    :external="external"
-    class="font-semibold underline underline-offset-4"
+    :target="target || href.startsWith('http') ? '_blank' : '_self'"
+    :external="external ?? href.startsWith('http')"
+    class="text-blue-500 dark:text-blue-400 font-semibold underline underline-offset-6"
   >
     <slot />
   </NuxtLink>

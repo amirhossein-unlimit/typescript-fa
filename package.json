@@ -39,7 +39,7 @@
     "build": "nuxt prepare && nuxt build www",
     "dev": "nuxt prepare && nuxt dev www",
     "generate": "nuxt prepare && nuxt generate www",
-    "preview": "nuxt prepare && nuxt preview www",
+    "preview": "nuxt prepare && nuxt preview www --port 3070",
     "typecheck": "nuxt prepare && nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -50,7 +50,6 @@
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.10.0",
-    "@nuxt/scripts": "^0.11.9",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/mdc": "^0.17.1",
     "@nuxtjs/sitemap": "^7.4.3",

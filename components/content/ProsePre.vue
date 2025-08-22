@@ -48,6 +48,7 @@ defineProps({
 <style>
 pre code .line{
   display: block;
-  min-height: 1rem
+  min-height: 1rem;
+  font-family: "FiraCode";
 }
 </style>

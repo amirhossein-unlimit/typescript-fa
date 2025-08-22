@@ -1,7 +1,6 @@
 <template>
-  <div v-if="page.prevNext ?? true" class="border-t pt-6 lg:flex lg:flex-col xl:flex-row">
+  <div v-if="page.prevNext ?? true" class="border-t pt-6 lg:flex lg:flex-row lg:gap-4 " :class="{ 'justify-end': !!next }">
     <LayoutPrevNextButton :prev-next="prev" side="left" />
-    <span class="flex-1" />
     <LayoutPrevNextButton :prev-next="next" side="right" />
   </div>
 </template>

@@ -11,10 +11,7 @@ export default defineNuxtConfig({
       },
       meta: [
         { charset: 'utf-8' },
-        {
-          name: 'google-site-verification',
-          content: 'ua4tu0Nwkv-0Bw9_AvDyHJxlZ7F-GKrymz_rAWb8wXA',
-        },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'robots', content: 'index, follow' },
         { name: 'rating', content: 'general' },
         {
@@ -56,7 +53,44 @@ export default defineNuxtConfig({
           sizes: '16x16',
           href: '/favicon-16x16.png',
         },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: `${import.meta.env.NUXT_SITE_NAME} RSS Feed`,
+          href: '/rss.xml',
+        },
+        {
+          rel: 'alternate',
+          type: 'application/atom+xml',
+          title: `${import.meta.env.NUXT_SITE_NAME} Atom Feed`,
+          href: '/atom.xml',
+        },
+        {
+          rel: 'alternate',
+          type: 'application/feed+json',
+          title: 'JSON Feed',
+          href: '/feed.json',
+        },
       ],
+      script: [
+        // Prevent flash of light mode on page load
+        {
+          innerHTML: `
+            (function() {
+              const savedMode = localStorage.getItem('nuxt-color-mode');
+              if (!savedMode || savedMode === 'dark') {
+                document.documentElement.classList.add('dark');
+              }
+            })();
+          `,
+          type: 'text/javascript',
+        },
+      ],
+    },
+  },
+  nitro: {
+    prerender: {
+      routes: ['/rss.xml', '/atom.xml', '/feed.json'],
     },
   },
 });

@@ -109,4 +109,32 @@ defineOgImageComponent(config.value.site.ogImageComponent, {
   title: page.value?.title,
   description: page.value?.description,
 });
+
+useSchemaOrg([
+  defineWebPage({
+    name: page.value?.title,
+    url: siteUrl + route.path,
+  }),
+
+  defineArticle({
+    description: page.value?.description,
+    datePublished: new Date(page.value.createdAt).toISOString(),
+    dateModified: new Date(page.value.updatedAt || page.value.createdAt).toISOString(),
+  }),
+
+  defineBreadcrumb({
+    itemListElement: useBreadcrumb(route.path).map(({ title, href }) => ({ name: title, item: href })),
+  }),
+
+  definePerson({
+    name: config.value.site.author,
+    alternateName: 'Amirhossein Azimi',
+    sameAs: [
+      'https://github.com/amirhossein-unlimit',
+      'https://twitter.com/amirhosseinUnl',
+      'https://t.me/amirhossein_unlimit',
+      'https://instagram.com/amirhossein_unlimit',
+    ],
+  }),
+]);
 </script>

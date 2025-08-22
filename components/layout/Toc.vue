@@ -54,7 +54,6 @@
         </NuxtLink>
       </div>
       <div class="flex-grow" />
-      <LayoutCarbonAds v-if="isDesktop && carbonAdsEnabled" />
     </div>
   </UiScrollArea>
   <UiCollapsible
@@ -81,12 +80,7 @@ defineProps<{ isSmall: boolean }>();
 const config = useConfig();
 
 const { toc } = useContent();
-const { title, links: configLinks, iconLinks, carbonAds } = useConfig().value.toc;
-
-const isDesktop = useMediaQuery('(min-width: 1024px)');
-const carbonAdsEnabled = computed(
-  () => carbonAds.enable && !(import.meta.dev && carbonAds.disableInDev),
-);
+const { title, links: configLinks, iconLinks } = useConfig().value.toc;
 
 const isOpen = ref(false);
 

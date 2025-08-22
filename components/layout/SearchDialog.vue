@@ -30,7 +30,7 @@
               </UiCommandGroup>
               <UiCommandSeparator v-if="item.children" />
             </template>
-            <UiCommandGroup v-if="darkModeToggle" heading="Theme" class="p-1.5">
+            <UiCommandGroup v-if="darkModeToggle" heading="theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="mr-2 size-4" />
                 <span>روشن</span>
@@ -68,7 +68,7 @@
               <span class="text-muted-foreground ml-2 self-center truncate text-xs" v-html="getHighlightedContent(item.content)" />
             </NuxtLink>
           </div>
-          <div v-else class="text-muted-foreground pt-4 text-center">
+          <div v-else dir="rtl" class="text-muted-foreground pt-4 text-center">
             چیزی پیدا نشد.
           </div>
         </UiCommandList>

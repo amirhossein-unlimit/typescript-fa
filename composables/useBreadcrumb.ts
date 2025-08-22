@@ -24,8 +24,6 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
     nav = page?.children;
 
     breadcrumbItems.push({ title: page?.title ?? segment, href });
-    // if (i !== 0) {
-    // }
   }
   return breadcrumbItems;
 }

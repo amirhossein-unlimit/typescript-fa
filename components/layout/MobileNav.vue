@@ -9,8 +9,8 @@
         <Icon name="lucide:menu" size="18" />
       </UiButton>
     </UiSheetTrigger>
-    <UiSheetContent side="left" class="pr-0">
-      <LayoutHeaderLogo />
+    <UiSheetContent side="left" class="pl-4 pt-4 pr-0">
+      <LayoutHeaderLogo class="mt-3 pr-4 text-right" />
       <LayoutAside is-mobile />
       <UiDialogTitle class="sr-only" />
       <UiDialogDescription class="sr-only" />

@@ -1,7 +1,7 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
-import { defineOrganization } from 'nuxt-schema-org/schema';
+import { defineWebSite } from 'nuxt-schema-org/schema';
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 export default defineNuxtConfig({
@@ -19,8 +19,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     'nuxt-og-image',
-    '@nuxt/scripts',
-    '@nuxt/fonts',
     '@nuxtjs/sitemap',
     'nuxt-schema-org',
   ],
@@ -30,55 +28,39 @@ export default defineNuxtConfig({
     },
     sources: ['/api/__sitemap__/urls'],
   },
-  site: {
-    enabled: true,
-    indexable: true,
-  },
   schemaOrg: {
-    identity: defineOrganization({
-      'name': import.meta.env.NUXT_SITE_NAME,
-      'alternateName': 'TypeScript Persian Docs',
-      'description': import.meta.env.NUXT_SITE_DESC,
-      'url': import.meta.env.NUXT_SITE_URL,
-      'logo': '/logo.png',
-      '@type': ['Organization', 'EducationalOrganization'],
-      'inLanguage': 'fa-IR',
-      'keywords': [
-        'تایپ اسکریپت',
-        'TypeScript',
-        'جاوا اسکریپت',
-        'JavaScript',
-        'آموزش برنامه نویسی تایپ اسکریپت',
-        'داکیومنت تایپ اسکریپت',
-      ],
-      'educationalUse': [
-        'learning',
-        'reference',
-        'tutorial',
-        'documentation',
-      ],
-      'sameAs': [
-        'https://github.com/amirhossein-unlimit',
-        'https://twitter.com/amirhosseinUnl',
-        'https://t.me/amirhossein_unlimit',
-        'https://instagram.com/amirhossein_unlimit',
-      ],
-      'about': [
-        {
-          '@type': 'Thing',
-          'name': 'TypeScript',
-          'sameAs': 'https://www.wikidata.org/wiki/Q978185',
-        },
-        {
-          '@type': 'Thing',
-          'name': 'JavaScript',
-          'sameAs': 'https://www.wikidata.org/wiki/Q2005',
-        },
-      ],
-      'foundingDate': '2024-01-01',
-      'status': 'active',
-      'creativeWorkStatus': 'Published',
-    }),
+    identity:
+      defineWebSite({
+        name: import.meta.env.NUXT_SITE_NAME,
+        alternateName: 'TypeScript Persian Docs',
+        description: import.meta.env.NUXT_SITE_DESC,
+        url: import.meta.env.NUXT_SITE_URL,
+        inLanguage: 'fa-IR',
+        sameAs: [
+          'https://github.com/amirhossein-unlimit/typescript-fa',
+        ],
+        about: [
+          {
+            '@type': 'Thing',
+            'name': 'TypeScript',
+            'sameAs': 'https://www.wikidata.org/wiki/Q978185',
+          },
+          {
+            '@type': 'Thing',
+            'name': 'JavaScript',
+            'sameAs': 'https://www.wikidata.org/wiki/Q2005',
+          },
+        ],
+      }),
+  },
+  ogImage: {
+    fonts: [
+      'Vazirmatn:400',
+      'Vazirmatn:700',
+    ],
+    defaults: {
+      component: 'ShadcnDocs',
+    },
   },
   shadcn: {
     prefix: 'Ui',
@@ -136,11 +118,6 @@ export default defineNuxtConfig({
       sizeLimitKb: 512,
     },
   },
-  fonts: {
-    defaults: {
-      weights: ['300 800'],
-    },
-  },
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -156,5 +133,6 @@ export default defineNuxtConfig({
       include: ['debug'],
     },
   },
+
   compatibilityDate: '2025-05-13',
 });

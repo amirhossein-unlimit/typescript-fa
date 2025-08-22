@@ -10,17 +10,12 @@ const customDefu = createDefu((obj, key, value) => {
 const defaultConfig: DefaultConfig = {
   site: {
     name: 'مستندات فارسی تایپ اسکریپت',
-    description: '«راهنمای جامع تایپ‌اسکریپت به زبان فارسی؛ از نصب تا نکات پیشرفته، همراه با مثال‌های کاربردی و توضیح گام‌به‌گام»',
+    description: 'مرجع کامل آموزش و مستندات تایپ اسکریپت به زبان فارسی برای توسعه‌دهندگان ایرانی',
     author: 'امیرحسین عظیمی',
     favicon: '/favicon.ico',
     ogImage: '/hero.png',
     ogImageComponent: 'ShadcnDocs',
-    ogImageColor: 'light',
-    umami: {
-      enable: false,
-      src: 'https://cloud.umami.is/script.js',
-      dataWebsiteId: '',
-    },
+    ogImageColor: 'dark',
   },
   theme: {
     customizable: false,
@@ -136,16 +131,6 @@ const defaultConfig: DefaultConfig = {
     title: 'On This Page',
     links: [],
     iconLinks: [],
-    carbonAds: {
-      enable: false,
-      disableInDev: false,
-      disableInMobile: false,
-      fallback: false,
-      fallbackMessage: 'Please support us by disabling your ad blocker.',
-      code: '',
-      placement: '',
-      format: 'cover',
-    },
   },
   search: {
     enable: true,
@@ -209,4 +194,8 @@ export function useConfig() {
       };
     },
   );
+}
+
+export function useServerConfig() {
+  return useAppConfig()?.shadcnDocs as DefaultConfig || defaultConfig;
 }

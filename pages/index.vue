@@ -22,7 +22,11 @@ useSeoMeta({
   ogTitle: page.value?.title,
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: config.value.site.ogImage,
   twitterCard: 'summary_large_image',
+});
+
+defineOgImageComponent(config.value.site.ogImageComponent, {
+  title: page.value?.title,
+  description: 'مرجع کامل آموزش و مستندات تایپ اسکریپت به زبان فارسی برای توسعه دهندگان ایرانی',
 });
 </script>

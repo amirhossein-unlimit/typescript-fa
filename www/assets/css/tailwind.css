@@ -10,6 +10,7 @@
     src: url("../fonts/IRANSansXV.woff") format("woff"),
       url("../fonts/IRANSansXV.woff2") format("woff2");
   }
+
   *,
   ::after,
   ::before,

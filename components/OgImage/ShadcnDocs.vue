@@ -2,31 +2,35 @@
   <div
     class="flex size-full flex-col justify-center p-16"
     :class="[colorMode === 'light' ? 'bg-white' : 'bg-zinc-950']"
-    :style="`background-size: 120px 120px; background-image: linear-gradient(to right, ${colorMode === 'light' ? '#e5e7eb' : '#27272a'} 1px, transparent 1px), linear-gradient(to bottom, ${colorMode === 'light' ? '#e5e7eb' : '#27272a'} 1px, transparent 1px);`"
+    :style="`background-size: 40px 40px; background-image: linear-gradient(to right, ${colorMode === 'light' ? '#e5e7ebb3' : '#101828'} 1px, transparent 1px), linear-gradient(to bottom, ${colorMode === 'light' ? '#e5e7ebb3' : '#101828'} 1px, transparent 1px); font-family: IRANSansXV;`"
   >
-    <div class="mb-4 flex">
-      <img v-if="colorMode === 'light'" :src="logo.light" height="65">
-      <img v-else :src="logo.dark" height="65">
+    <div
+      class="mb-14 flex"
+    >
+      <img v-if="colorMode === 'light'" :src="logo.light" height="80">
+      <img v-else :src="logo.dark" height="80">
       <span
         v-if="showTitle && siteTitle"
-        class="ml-4 self-center text-4xl font-bold"
+        class="ml-4 self-center text-4xl font-bold whitespace-nowrap"
         :class="[colorMode === 'light' ? 'text-zinc-900' : 'text-zinc-100']"
       >
-        {{ siteTitle }}
+        {{ reverseText(siteTitle) }}
       </span>
     </div>
-    <div class="relative">
+    <div
+      class="w-full relative flex flex-col"
+    >
       <h1
-        class="text-8xl font-bold"
+        class="text-6xl font-bold m-0 mb-5"
         :class="[colorMode === 'light' ? 'text-zinc-900' : 'text-zinc-100']"
       >
-        {{ title }}
+        {{ reverseText(title) }}
       </h1>
       <p
-        class="text-4xl leading-tight"
+        class="text-[26px] leading-tight whitespace-nowrap m-0"
         :class="[colorMode === 'light' ? 'text-zinc-500' : 'text-zinc-400']"
       >
-        {{ description }}
+        {{ reverseText(description) }}
       </p>
     </div>
   </div>
@@ -44,4 +48,11 @@ const { logo, title: siteTitle, showTitle } = useConfig().value.header;
 const colorMode = computed(() => {
   return props.colorMode || useConfig().value.site.ogImageColor || 'light';
 });
+
+function reverseText(text: string) {
+  // 小 : means little in Chinese
+  // Can be replaced with any character that's not defined in your font
+  // 小
+  return text.split(' ').reverse().join('、');
+}
 </script>
