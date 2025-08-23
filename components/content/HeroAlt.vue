@@ -1,10 +1,10 @@
 <template>
   <div
-    class="gap-8 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10"
+    class="gap-8 px-2 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10"
     :class="{ 'grid md:grid-cols-3': $slots.right }"
   >
     <section
-      class="flex flex-col items-start gap-2"
+      class="flex flex-col items-center md:items-start gap-2"
       :class="{ 'md:col-span-2': $slots.right }"
     >
       <NuxtLink
@@ -21,14 +21,14 @@
         <Icon name="lucide:arrow-right" class="ml-1 size-4" />
       </NuxtLink>
 
-      <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
+      <h1 class="text-2xl font-bold leading-tight tracking-tighter md:text-4xl text-center md:text-right lg:leading-[1.1]">
         <ContentSlot :use="$slots.title" unwrap="p" />
       </h1>
-      <p class="text-foreground max-w-2xl text-lg font-light">
+      <p class="text-foreground max-w-2xl text-base text-center md:text-right font-light mt-1">
         <ContentSlot :use="$slots.description" unwrap="p" />
       </p>
 
-      <div class="flex w-full items-center justify-start gap-2 py-2">
+      <div class="flex w-full items-center justify-center md:justify-start gap-2 py-2">
         <NuxtLink
           v-for="(action, i) in actions"
           :key="i"

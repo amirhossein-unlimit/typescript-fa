@@ -1,8 +1,8 @@
 <template>
   <NuxtLink
     :to="href"
-    :target="target || href.startsWith('http') ? '_blank' : '_self'"
-    :external="external ?? href.startsWith('http')"
+    :target="target || isExternal ? '_blank' : '_self'"
+    :external="isExternal"
     class="text-blue-500 dark:text-blue-400 font-semibold underline underline-offset-6"
   >
     <slot />
@@ -18,4 +18,7 @@ const {
   target?: Target;
   external?: boolean;
 }>();
+
+const prefix = 'http';
+const isExternal = external || href.slice(0, prefix.length) === prefix;
 </script>
