@@ -96,45 +96,55 @@ useSeoMeta({
 
 const route = useRoute();
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: siteUrl + route.path,
-    },
-  ],
-});
-
-defineOgImageComponent(config.value.site.ogImageComponent, {
-  title: page.value?.title,
-  description: page.value?.description,
-});
-
-useSchemaOrg([
-  defineWebPage({
-    name: page.value?.title,
-    url: siteUrl + route.path,
-  }),
-
-  defineArticle({
-    description: page.value?.description,
-    datePublished: new Date(page.value.createdAt).toISOString(),
-    dateModified: new Date(page.value.updatedAt || page.value.createdAt).toISOString(),
-  }),
-
-  defineBreadcrumb({
-    itemListElement: useBreadcrumb(route.path).map(({ title, href }) => ({ name: title, item: href })),
-  }),
-
-  definePerson({
-    name: config.value.site.author,
-    alternateName: 'Amirhossein Azimi',
-    sameAs: [
-      'https://github.com/amirhossein-unlimit',
-      'https://twitter.com/amirhosseinUnl',
-      'https://t.me/amirhossein_unlimit',
-      'https://instagram.com/amirhossein_unlimit',
+if (page.value?.body) {
+  useHead({
+    link: [
+      {
+        rel: 'canonical',
+        href: siteUrl + route.path,
+      },
     ],
-  }),
-]);
+  });
+}
+
+defineOgImage({
+  component: config.value.site.ogImageComponent,
+  props: {
+    title: page.value?.title || 'صفحه مورد نظر یافت نشد',
+    description: page.value?.description,
+  },
+  sharp: {
+    quality: 70,
+  },
+});
+
+if (page.value?.body) {
+  useSchemaOrg([
+    defineWebPage({
+      name: page.value?.title,
+      url: siteUrl + route.path,
+    }),
+
+    defineArticle({
+      description: page.value?.description,
+      datePublished: new Date(page.value?.createdAt || null).toISOString(),
+      dateModified: new Date(page.value?.updatedAt || page.value?.createdAt || null).toISOString(),
+    }),
+
+    defineBreadcrumb({
+      itemListElement: useBreadcrumb(route.path).map(({ title, href }) => ({ name: title, item: href })),
+    }),
+
+    definePerson({
+      name: config.value.site.author,
+      alternateName: 'Amirhossein Azimi',
+      sameAs: [
+        'https://github.com/amirhossein-unlimit',
+        'https://twitter.com/amirhosseinUnl',
+        'https://t.me/amirhossein_unlimit',
+        'https://instagram.com/amirhossein_unlimit',
+      ],
+    }),
+  ]);
+}
 </script>

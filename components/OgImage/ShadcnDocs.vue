@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex size-full flex-col justify-center p-16"
+    class="flex size-full flex-col justify-center p-12"
     :class="[colorMode === 'light' ? 'bg-white' : 'bg-zinc-950']"
     :style="`background-size: 40px 40px; background-image: linear-gradient(to right, ${colorMode === 'light' ? '#e5e7ebb3' : '#101828'} 1px, transparent 1px), linear-gradient(to bottom, ${colorMode === 'light' ? '#e5e7ebb3' : '#101828'} 1px, transparent 1px); font-family: IRANSansXV;`"
   >
@@ -52,7 +52,6 @@ const colorMode = computed(() => {
 function reverseText(text: string) {
   // 小 : means little in Chinese
   // Can be replaced with any character that's not defined in your font
-  // 小
   return text.split(' ').reverse().join('、');
 }
 </script>

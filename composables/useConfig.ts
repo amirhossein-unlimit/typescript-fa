@@ -15,7 +15,7 @@ const defaultConfig: DefaultConfig = {
     favicon: '/favicon.ico',
     ogImage: '/hero.png',
     ogImageComponent: 'ShadcnDocs',
-    ogImageColor: 'dark',
+    ogImageColor: 'light',
   },
   theme: {
     customizable: false,
