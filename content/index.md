@@ -1,5 +1,6 @@
 ---
 title: صفحه اصلی
+description: مرجع کامل آموزش و مستندات تایپ اسکریپت به زبان فارسی برای توسعه دهندگان ایرانی
 navigation: false
 ---
 
@@ -7,7 +8,7 @@ navigation: false
 ---
 actions:
   - name: مستندات
-    to: "/get-started"
+    to: "/introduction"
   - name: گیت هاب
     variant: outline
     to: https://github.com/amirhossein-unlimit/typescript-fa

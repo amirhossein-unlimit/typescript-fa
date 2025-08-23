@@ -15,7 +15,7 @@
   <template v-else>
     <div
       v-if="page?.fullpage"
-      class="px-4 py-6 md:px-8"
+      class="px-4 py-6"
       :class="[config.main.padded && 'container']"
     >
       <ContentRenderer
@@ -107,15 +107,9 @@ if (page.value?.body) {
   });
 }
 
-defineOgImage({
-  component: config.value.site.ogImageComponent,
-  props: {
-    title: page.value?.title || 'صفحه مورد نظر یافت نشد',
-    description: page.value?.description,
-  },
-  sharp: {
-    quality: 70,
-  },
+defineOgImageComponent(config.value.site.ogImageComponent, {
+  title: page.value?.title || 'Not Found',
+  description: page.value?.title ? page.value?.description : 'متاسفانه صفحه مورد نظر یافت نشد',
 });
 
 if (page.value?.body) {
@@ -140,7 +134,7 @@ if (page.value?.body) {
       alternateName: 'Amirhossein Azimi',
       sameAs: [
         'https://github.com/amirhossein-unlimit',
-        'https://twitter.com/amirhosseinUnl',
+        'https://twitter.com/amirhossein_unl',
         'https://t.me/amirhossein_unlimit',
         'https://instagram.com/amirhossein_unlimit',
       ],

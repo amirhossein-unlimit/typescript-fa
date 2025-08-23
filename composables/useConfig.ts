@@ -7,11 +7,12 @@ const customDefu = createDefu((obj, key, value) => {
   }
 });
 
+const { NUXT_SITE_NAME: siteName, NUXT_SITE_DESC: siteDesc, NUXT_AUTHOR_NAME: authorName } = import.meta.env;
 const defaultConfig: DefaultConfig = {
   site: {
-    name: 'مستندات فارسی تایپ اسکریپت',
-    description: 'مرجع کامل آموزش و مستندات تایپ اسکریپت به زبان فارسی برای توسعه‌دهندگان ایرانی',
-    author: 'امیرحسین عظیمی',
+    name: siteName,
+    description: siteDesc,
+    author: authorName,
     favicon: '/favicon.ico',
     ogImage: '/hero.png',
     ogImageComponent: 'ShadcnDocs',
@@ -21,14 +22,6 @@ const defaultConfig: DefaultConfig = {
     customizable: false,
     color: 'zinc',
     radius: 0.5,
-  },
-  banner: {
-    enable: false,
-    showClose: true,
-    content: 'Welcome to **shadcn-docs-nuxt**',
-    to: '',
-    target: '_blank',
-    border: true,
   },
   header: {
     showLoadingIndicator: true,
@@ -128,7 +121,7 @@ const defaultConfig: DefaultConfig = {
     enable: true,
     enableInMobile: false,
     enableInHomepage: false,
-    title: 'On This Page',
+    title: 'در این صفحه',
     links: [],
     iconLinks: [],
   },
@@ -154,7 +147,6 @@ export function useConfig() {
       const header = processedConfig.header;
       const main = processedConfig.main;
       const aside = processedConfig.aside;
-      const banner = processedConfig.banner;
       const footer = processedConfig.footer;
       const toc = processedConfig.toc;
 
@@ -166,11 +158,6 @@ export function useConfig() {
           ...navKeyFromPath(route.path, 'header', navigation.value || []),
           ...page.value?.header,
         } as (typeof header & DefaultConfig['header']),
-        banner: {
-          ...banner,
-          ...navKeyFromPath(route.path, 'banner', navigation.value || []),
-          ...page.value?.banner,
-        } as (typeof banner & DefaultConfig['banner']),
         main: {
           ...main,
           ...navKeyFromPath(route.path, 'main', navigation.value || []),
@@ -197,5 +184,5 @@ export function useConfig() {
 }
 
 export function useServerConfig() {
-  return useAppConfig()?.shadcnDocs as DefaultConfig || defaultConfig;
+  return useAppConfig()?.shadcnDocs || defaultConfig;
 }

@@ -13,14 +13,6 @@ interface DefaultConfig {
     color: Color;
     radius: number;
   };
-  banner: {
-    enable: boolean;
-    showClose: boolean;
-    content: string;
-    to: string;
-    target: Target;
-    border: boolean;
-  };
   header: {
     showLoadingIndicator: boolean;
     title: string;

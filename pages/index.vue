@@ -26,7 +26,7 @@ useSeoMeta({
 });
 
 defineOgImageComponent(config.value.site.ogImageComponent, {
-  title: page.value?.title,
-  description: 'مرجع کامل آموزش و مستندات تایپ اسکریپت به زبان فارسی برای توسعه دهندگان ایرانی',
+  title: '',
+  description: page.value?.description,
 });
 </script>

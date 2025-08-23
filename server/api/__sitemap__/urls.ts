@@ -17,6 +17,6 @@ export default defineEventHandler(async (event) => {
     .filter((doc: Doc) => doc._extension !== 'yaml' && doc._extension !== 'yml')
     .map((doc: Doc) => asSitemapUrl({
       loc: doc._path,
-      lastmod: doc.updatedAt || doc.createdAt,
+      lastmod: new Date(doc.updatedAt || doc.createdAt),
     }));
 });

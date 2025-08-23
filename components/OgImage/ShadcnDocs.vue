@@ -7,8 +7,8 @@
     <div
       class="mb-14 flex"
     >
-      <img v-if="colorMode === 'light'" :src="logo.light" height="80">
-      <img v-else :src="logo.dark" height="80">
+      <img v-if="colorMode === 'light'" :src="logo.light" height="70">
+      <img v-else :src="logo.dark" height="70">
       <span
         v-if="showTitle && siteTitle"
         class="ml-4 self-center text-4xl font-bold whitespace-nowrap"
@@ -21,10 +21,10 @@
       class="w-full relative flex flex-col"
     >
       <h1
-        class="text-6xl font-bold m-0 mb-5"
+        class="text-7xl font-bold m-0 mb-5"
         :class="[colorMode === 'light' ? 'text-zinc-900' : 'text-zinc-100']"
       >
-        {{ reverseText(title) }}
+        {{ title }}
       </h1>
       <p
         class="text-[26px] leading-tight whitespace-nowrap m-0"

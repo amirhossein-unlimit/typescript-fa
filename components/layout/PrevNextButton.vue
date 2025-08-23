@@ -4,7 +4,7 @@
     :to="prevNext._path"
     class="basis-1/2"
   >
-    <div class="hover:bg-muted/50 mb-4 space-y-2 rounded-lg border p-4 transition-all">
+    <div class="h-full hover:bg-muted/50 space-y-2 rounded-lg border p-4 transition-all">
       <div class="flex flex-row gap-3">
         <div v-if="side === 'left'" class="flex size-6 min-w-6">
           <Icon name="lucide:arrow-right" size="20" class="mx-auto self-center" />

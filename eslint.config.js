@@ -8,9 +8,6 @@ export default antfu({
   },
   typescript: true,
   vue: true,
-  ignores: [
-    'www/content/km/**/*.md',
-  ],
 }, {
   rules: {
     'style/brace-style': ['warn', '1tbs', { allowSingleLine: true }],
