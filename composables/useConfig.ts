@@ -15,7 +15,7 @@ const defaultConfig: DefaultConfig = {
     author: authorName,
     favicon: '/favicon.ico',
     ogImage: '/hero.png',
-    ogImageComponent: 'ShadcnDocs',
+    ogImageComponent: 'doc',
     ogImageColor: 'light',
   },
   theme: {
@@ -135,7 +135,7 @@ const defaultConfig: DefaultConfig = {
 };
 
 export function useConfig() {
-  const appConfig = computed(() => useAppConfig()?.shadcnDocs || {});
+  const appConfig = computed(() => useAppConfig()?.docs || {});
 
   const { navKeyFromPath } = useContentHelpers();
   const { navigation, page } = useContent();
@@ -184,5 +184,5 @@ export function useConfig() {
 }
 
 export function useServerConfig() {
-  return useAppConfig()?.shadcnDocs || defaultConfig;
+  return useAppConfig()?.docs || defaultConfig;
 }

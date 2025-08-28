@@ -63,7 +63,7 @@ export default defineNuxtConfig({
       'Vazirmatn:700',
     ],
     defaults: {
-      component: 'ShadcnDocs',
+      component: 'doc',
     },
   },
   shadcn: {
@@ -203,20 +203,6 @@ export default defineNuxtConfig({
           type: 'application/feed+json',
           title: `${import.meta.env.NUXT_SITE_NAME} JSON Feed`,
           href: '/feed.json',
-        },
-      ],
-      script: [
-        // Prevent flash of light mode on page load
-        {
-          innerHTML: `
-            (function() {
-              const savedMode = localStorage.getItem('nuxt-color-mode');
-              if (!savedMode || savedMode === 'dark') {
-                document.documentElement.classList.add('dark');
-              }
-            })();
-          `,
-          type: 'text/javascript',
         },
       ],
     },

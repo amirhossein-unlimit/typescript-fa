@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-docs-nuxt",
+  "name": "TypeScript Persian Docs",
   "type": "module",
   "packageManager": "pnpm@10.13.1",
   "scripts": {

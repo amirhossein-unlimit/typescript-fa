@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  shadcnDocs: {
+  docs: {
     site: {
       name: 'مستندات فارسی تایپ اسکریپت',
       description:
