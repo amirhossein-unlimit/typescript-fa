@@ -21,7 +21,7 @@
       <ContentRenderer
         :key="page._id"
         :value="page"
-        :data="(appConfig.shadcnDocs as any)?.data"
+        :data="(appConfig.docs as any)?.data"
       />
     </div>
     <main
@@ -53,7 +53,7 @@
           v-else
           :key="page._id"
           :value="page"
-          :data="(appConfig.shadcnDocs as any)?.data"
+          :data="(appConfig.docs as any)?.data"
           class="docs-content"
         />
 
@@ -78,6 +78,8 @@ const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
 const { siteUrl } = useRuntimeConfig().public;
+const route = useRoute();
+
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
   ogTitle: page.value?.title,
@@ -88,13 +90,12 @@ useSeoMeta({
   ogType: 'article',
   ogLocale: 'fa_IR',
   ogSiteName: config.value.site.name,
+  ogUrl: siteUrl + route.path,
   twitterCard: 'summary_large_image',
   twitterCreator: config.value.site.author,
   author: config.value.site.author,
   xUaCompatible: 'IE=edge',
 });
-
-const route = useRoute();
 
 if (page.value?.body) {
   useHead({

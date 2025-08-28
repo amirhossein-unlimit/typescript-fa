@@ -7,7 +7,7 @@
     <ContentRenderer
       :key="page._id"
       :value="page"
-      :data="(appConfig.shadcnDocs as any)?.data"
+      :data="(appConfig.docs as any)?.data"
     />
   </div>
 </template>
@@ -17,12 +17,17 @@ const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
 
+const { siteUrl } = useRuntimeConfig().public;
+
 useSeoMeta({
-  title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
-  ogTitle: page.value?.title,
+  title: config.value.site.name,
   description: page.value?.description,
+  ogTitle: config.value.site.name,
   ogDescription: page.value?.description,
+  twitterTitle: config.value.site.name,
+  twitterDescription: page.value?.description,
   twitterCard: 'summary_large_image',
+  ogUrl: siteUrl,
 });
 
 defineOgImageComponent(config.value.site.ogImageComponent, {
