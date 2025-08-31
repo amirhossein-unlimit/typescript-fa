@@ -26,3 +26,34 @@ mobileRight: 'top'
 #right
 ![logo](/logo.png)
 ::
+
+::card-group{:cols="4"}
+  ::card
+  ---
+  title: جست و جو
+  icon: lucide:search
+  ---
+  جست‌و‌جو سریع اسناد و مطالب دسته بندی شده مربوط به TypeScript 
+  ::
+  ::card
+  ---
+  title: ترجمه به‌روز
+  icon: lucide:languages
+  ---
+  همه مستندات TypeScript با دقت ترجمه شده اند و همیشه به‌روز هستند.
+  ::
+  ::card
+  ---
+  title: پروژه اوپن سورس
+  icon: lucide:box
+  ---
+  سایت کاملاً اوپن سورس است؛ می‌توانید مشکلات را گزارش دهید یا آن را برای استفاده خود clone کنید.
+  ::
+  ::card
+  ---
+  title: مثال‌ها و تمرین‌ها
+  icon: lucide:code-xml
+  ---
+  یادگیری سریع از طریق مثال‌ها و کدهای آماده همراه با توضیحات.
+  ::  
+::

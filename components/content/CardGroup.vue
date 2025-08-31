@@ -1,7 +1,7 @@
 <template>
   <div
     class="group grid gap-4 [&:not(:first-child)]:mt-5"
-    :class="`${['md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-4', 'md:grid-cols-5', 'md:grid-cols-6'][cols - 1]}`"
+    :class="`${['md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-2 lg:grid-cols-4', 'md:grid-cols-5', 'md:grid-cols-6'][cols - 1]}`"
   >
     <slot />
   </div>
