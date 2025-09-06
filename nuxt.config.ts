@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     },
     xsl: false,
     sources: ['/api/__sitemap__/urls'],
+    credits: false
   },
   schemaOrg: {
     identity:
