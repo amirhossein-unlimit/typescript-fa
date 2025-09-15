@@ -30,6 +30,15 @@ useSeoMeta({
   ogUrl: siteUrl,
 });
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: siteUrl,
+    },
+  ],
+});
+
 defineOgImageComponent(config.value.site.ogImageComponent, {
   title: '',
   description: page.value?.description,
