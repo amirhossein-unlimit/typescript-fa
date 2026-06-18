@@ -8,18 +8,19 @@
 ## 📊 وضعیت ترجمه
 | فصل | درس | وضعیت | درصد پیشرفت |
 |-----------|-----------|--------|-------------|
-| **Get Started** | — | 🚫 شروع نشده | 0 % |
-| **Handbook** | The Basics | ✅ ترجمه‌شده | 100 % |
-| | Everyday Types | ✅ ترجمه‌شده | 100 % |
-| | Narrowing | ✅ ترجمه‌شده | 100 % |
-| | بقیه دروس | 🚫 شروع نشده | 0 % |
-| **Reference** | — | 🚫 شروع نشده | 0 % |
-| **Modules Reference** | — | 🚫 شروع نشده | 0 % |
-| **Tutorials** | — | 🚫 شروع نشده | 0 % |
-| **Declaration Files** | — | 🚫 شروع نشده | 0 % |
-| **JavaScript** | — | 🚫 شروع نشده | 0 % |
-| **Project Configuration** | — | 🚫 شروع نشده | 0 % |
-| **Cheat Sheets** | — | 🚫 شروع نشده | 0 % |
+| **Get Started** | — | ❌ شروع نشده | 0% |
+| **Handbook** | The Basics | ✅ ترجمه‌شده | 100% |
+| | Everyday Types | 🔄 در حال ترجمه | 64% |
+| | Narrowing | ✅ ترجمه‌شده | 100% |
+| | More on Functions | 🔄 در حال ترجمه | 0% |
+| | بقیه دروس | ❌ شروع نشده | 0% |
+| **Reference** | — | ❌ شروع نشده | 0% |
+| **Modules Reference** | — | ❌ شروع نشده | 0% |
+| **Tutorials** | — | ❌ شروع نشده | 0% |
+| **Declaration Files** | — | ❌ شروع نشده | 0% |
+| **JavaScript** | — | ❌ شروع نشده | 0% |
+| **Project Configuration** | — | ❌ شروع نشده | 0% |
+| **Cheat Sheets** | — | ❌ شروع نشده | 0% |
 
 ## 🔗 لینک‌ها
 - [مستندات اصلی تایپ‌اسکریپت](https://typescriptlang.org/docs/)
@@ -32,6 +33,3 @@ git clone https://github.com/amirhossein-unlimit/typescript-fa
 pnpm i
 pnpm run dev
 ```
-
-## 📄 لایسنس
-این پروژه تحت مجوز [MIT](LICENSE) منتشر شده است.
