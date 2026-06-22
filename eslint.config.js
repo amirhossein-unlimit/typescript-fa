@@ -15,4 +15,12 @@ export default antfu({
       order: ['template', 'script', 'style'],
     }],
   },
+  overrides: [
+    {
+      files: ['content/**/*.md'],
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+      },
+    },
+  ],
 });
